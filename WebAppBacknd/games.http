@@ -27,3 +27,7 @@ Content-Type: application/json
     "price": 9.99,
     "releaseDate": "2019-07-15"
   }
+
+###
+
+DELETE http://localhost:5171/games/2
