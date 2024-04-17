@@ -2,7 +2,7 @@ GET http://localhost:5171/games
 
 ###
 
-GET http://localhost:5171/games/1
+GET http://localhost:5171/games/4
 
 ###
 
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:5171/games/1
+PUT http://localhost:5171/games/5
 Content-Type: application/json
 
   {
