@@ -15,3 +15,15 @@ Content-Type: application/json
     "price": 19.99,
     "releaseDate": "2011-11-18"
 }
+
+###
+
+PUT http://localhost:5171/games/1
+Content-Type: application/json
+
+  {
+    "name": "Cyberpunk 2088",
+    "genre": "Fighting",
+    "price": 9.99,
+    "releaseDate": "2019-07-15"
+  }
