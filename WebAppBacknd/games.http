@@ -10,8 +10,8 @@ POST http://localhost:5171/games
 Content-Type: application/json
 
 {
-    "name": "Minecraft",
-    "genre": "Kids and Family",
+    "name": "WalkaKoxów",
+    "genreId": 1,
     "price": 19.99,
     "releaseDate": "2011-11-18"
 }
