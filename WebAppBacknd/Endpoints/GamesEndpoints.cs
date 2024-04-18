@@ -1,4 +1,6 @@
-﻿using WebAppBacknd.Dtos;
+﻿using WebAppBacknd.Data;
+using WebAppBacknd.Dtos;
+using WebAppBacknd.Entities;
 
 namespace WebAppBacknd.Endpoints;
 
@@ -44,16 +46,19 @@ public static class GamesEndpoints
         .WithName(GetGameEndpointName);
 
         // POST /games
-        group.MapPost("/", (CreateGameDto newGame) =>
+        group.MapPost("/", (CreateGameDto newGame, GameStoreContext dbContext) =>
         {
-            GameDto game = new(
-                games.Count + 1,
-                newGame.Name,
-                newGame.Genre,
-                newGame.Price,
-                newGame.ReleaseDate);
+            Game game = new()
+            {
+                Name = newGame.Name,
+                Genre = dbContext.Genres.Find(newGame.GenreId),
+                GenreId = newGame.GenreId,
+                Price = newGame.Price,
+                ReleaseDate = newGame.ReleaseDate
+            };
 
-            games.Add(game);
+            dbContext.Games.Add(game);
+            dbContext.SaveChanges();
 
             return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
         })
