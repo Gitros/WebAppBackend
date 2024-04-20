@@ -36,7 +36,11 @@ public static class GamesEndpoints
         var group = app.MapGroup("games").WithParameterValidation();
 
         // GET /games
-        group.MapGet("/", () => games);
+        group.MapGet("/", (GameStoreContext dbContext) =>
+            dbContext.Games
+                     .Include(game => game.Genre)
+                     .Select(game => game.ToGameSummaryDto())
+                     .AsNoTracking());
 
         // GET /games/1
         group.MapGet("/{id}", (int id, GameStoreContext dbContext) =>
@@ -55,7 +59,10 @@ public static class GamesEndpoints
             dbContext.Games.Add(game);
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game.ToGameDetailsDto());
+            return Results.CreatedAtRoute(
+                GetGameEndpointName,
+                new { id = game.Id },
+                game.ToGameDetailsDto());
         })
         .WithParameterValidation();
 
