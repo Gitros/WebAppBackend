@@ -10,27 +10,6 @@ public static class GamesEndpoints
 {
     const string GetGameEndpointName = "GetGame";
 
-    private static readonly List<GameSummaryDto> games = [
-        new (
-        1,
-        "Cyberpunk 2077",
-        "Fighting",
-        19.99M,
-        new DateOnly(2019, 7, 15)),
-    new (
-        2,
-        "The Binding of Isaac",
-        "Roguelike",
-        10.99M,
-        new DateOnly(2015, 5, 21)),
-    new(
-        3,
-        "League of Legends",
-        "Battle arena",
-        105.20M,
-        new DateOnly(2009, 2, 12)),
-    ];
-
     public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app)
     {
         var group = app.MapGroup("games").WithParameterValidation();
