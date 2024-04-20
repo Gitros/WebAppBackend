@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebAppBacknd.Data;
-using WebAppBacknd.Dtos;
-using WebAppBacknd.Entities;
-using WebAppBacknd.Mapping;
+using GameStore.Api.Data;
+using GameStore.Api.Dtos;
+using GameStore.Api.Entities;
+using GameStore.Api.Mapping;
 
-namespace WebAppBacknd.Endpoints;
+namespace GameStore.Api.Endpoints;
 
 public static class GamesEndpoints
 {

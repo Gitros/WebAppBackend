@@ -3,11 +3,11 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebAppBacknd.Data;
+using GameStore.Api.Data;
 
 #nullable disable
 
-namespace WebAppBacknd.Data.Migrations
+namespace GameStore.Api.Data.Migrations
 {
     [DbContext(typeof(GameStoreContext))]
     partial class GameStoreContextModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace WebAppBacknd.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
 
-            modelBuilder.Entity("WebAppBacknd.Entities.Game", b =>
+            modelBuilder.Entity("GameStore.Api.Entities.Game", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace WebAppBacknd.Data.Migrations
                     b.ToTable("Games");
                 });
 
-            modelBuilder.Entity("WebAppBacknd.Entities.Genre", b =>
+            modelBuilder.Entity("GameStore.Api.Entities.Genre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,9 +85,9 @@ namespace WebAppBacknd.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("WebAppBacknd.Entities.Game", b =>
+            modelBuilder.Entity("GameStore.Api.Entities.Game", b =>
                 {
-                    b.HasOne("WebAppBacknd.Entities.Genre", "Genre")
+                    b.HasOne("GameStore.Api.Entities.Genre", "Genre")
                         .WithMany()
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)

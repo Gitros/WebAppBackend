@@ -1,5 +1,5 @@
-using WebAppBacknd.Data;
-using WebAppBacknd.Endpoints;
+using GameStore.Api.Data;
+using GameStore.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 

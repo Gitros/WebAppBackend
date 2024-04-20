@@ -1,4 +1,4 @@
-﻿namespace WebAppBacknd.Dtos;
+﻿namespace GameStore.Api.Dtos;
 
 public record class GameDetailsDto(
     int Id,

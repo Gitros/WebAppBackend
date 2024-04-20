@@ -1,7 +1,7 @@
-﻿using WebAppBacknd.Dtos;
-using WebAppBacknd.Entities;
+﻿using GameStore.Api.Dtos;
+using GameStore.Api.Entities;
 
-namespace WebAppBacknd.Mapping;
+namespace GameStore.Api.Mapping;
 
 public static class GameMapping
 {

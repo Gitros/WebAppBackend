@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebAppBacknd.Entities;
+using GameStore.Api.Entities;
 
-namespace WebAppBacknd.Data;
+namespace GameStore.Api.Data;
 
 public class GameStoreContext(DbContextOptions<GameStoreContext> options)
     : DbContext(options)
